@@ -24,19 +24,28 @@ public:
   OLED();
   void begin();
   void end();
-  void sendcmd(uint8_t cmd);
-  void senddata(uint8_t data);
+  void wait(uint16_t);
+  void senddata(uint8_t);
+  void sendzeros(uint8_t);
+  void sendones(uint8_t);
   void noDisplay();
   void onDisplay();
-  void setPage(uint8_t x, uint8_t y);
-  void setCursor(uint8_t col, uint8_t row);
+  void setPage(uint8_t, uint8_t);
+  void setCursor(uint8_t, uint8_t);
+  void setXY(uint8_t, uint8_t);
+  void showCursor();
+  void home();
   void clr2eol();
-  void clrLine(uint8_t row);
+  void clrLine(uint8_t);
   void clrScreen();
-  void putch(uint8_t ch);
-  void putstr(char *str);
-  void printLine(uint8_t row, char *str);
-  void print32(uint32_t val);
+  void lookup(uint8_t);
+  void putch(uint8_t);
+  void putstr(char *);
+  void printline(uint8_t, char *);
+  void print8(uint8_t);
+  void print16(uint16_t);
+  void print32(uint32_t);
+  void print_freq(uint64_t);
 
   // variables
   uint8_t oledX;
